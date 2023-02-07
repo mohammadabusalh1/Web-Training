@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;900&family=Chivo+Mono:wght@100&display=swap');
+
+:root {
+    --main-color: #395B64;
+    --lite-color: #E7F6F2;
+    --meduim-color: #A5C9CA;
+    --black: #2C3333;
+    --box-shadow: 0.2rem 0.5rem 0.5rem rgb(0, 0, 0, 0.17);
+    --box-shadow2: 0.8rem 1rem 1rem rgb(0, 0, 0, 0.05);
+    --padding: 20px 80px;
+    --padding2: 40px 80px;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: 'Cairo', sans-serif;
+    color: var(--black);
+    text-shadow: 0px 4px 3px rgb(0, 0, 0, 0.04);
+}
+
+label{
+    display: block;
+}
+
+#login{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#info{
+    border: 1px solid hsl(193, 27%, 31%,0.5);
+    border-radius: 16px;
+    padding: 32px 24px;
+    box-shadow: var(--box-shadow);
+}
+
+input{
+    border:1px solid #395B64;
+    border-radius: 8px;
+    padding: 4px 8px;
+    margin-bottom: 24px;
+    width: 320px;
+}
+
+button{
+background-color: var(--main-color);
+border: none;
+width: 100%;
+padding: 4px 8px;
+color: white;
+cursor: pointer;
+margin-bottom: 8px;
+display: block;
+}
+
+button:hover{
+    opacity: 0.9;
+}
+
+a{
+    color: var(--main-color);
+}
