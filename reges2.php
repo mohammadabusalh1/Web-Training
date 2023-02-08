@@ -4,9 +4,6 @@
 <?php
 include 'conn/connc.php';
 
-if ($_SESSION['login'] == 0) {
-    echo '<script> window.location.replace("login.php")</script>';
-}
 ?>
 
 <head>

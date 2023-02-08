@@ -79,8 +79,8 @@ $status = $task["status"];
             <label for="status">Status:</label>
             <select id="status" name="status">
                 <option value="Pending" <?php if ($status == "Pending") echo "selected"; ?>>Pending</option>
-                <option value="In Progress" <?php if ($status == "In Progress") echo "selected"; ?>>In Progress</option>
-                <option value="Completed" <?php if ($status == "Completed") echo "selected"; ?>>Completed</option>
+                <option value="Active" <?php if ($status == "In Progress") echo "selected"; ?>>In Progress</option>
+                <option value="Finished" <?php if ($status == "Completed") echo "selected"; ?>>Completed</option>
             </select>
         </div>
         <button name="update_task">Update</button>

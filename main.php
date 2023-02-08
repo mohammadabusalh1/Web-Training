@@ -22,7 +22,8 @@ if ($_SESSION['login'] == 0) {
     <a href="addTask.php">Add task</a><br>
     <a href="Late.php">Late</a><br>
     <a href="Pending.php">Pending</a><br>
-    <a href="Active.php">Active</a>
+    <a href="Active.php">Active</a><br>
+    <a href="logout.php">logout</a>
     <br><br>
 
     <form method="post">
