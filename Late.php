@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<?php
+include 'conn/connc.php';
+session_start();
+$name = $_SESSION['uname'];
+if ($_SESSION['login'] == 0) {
+    echo '<script> window.location.replace("login.php")</script>';
+}
+?>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+</head>
+
+<body style="padding: 60px;">
+
+    <?php
+    $sql = "SELECT mem_id FROM users WHERE username = '$name'";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $mem_id = $row["mem_id"];
+
+        $sql1 = "SELECT * FROM `tasks` WHERE `assigning_member` = '" . $mem_id . "'  && `status`='Late'";
+        $result1 = mysqli_query($conn, $sql1);
+        if (mysqli_num_rows($result1) > 0) {
+            while ($row1 = mysqli_fetch_assoc($result1)) {
+                $id  = $row1["id"];
+                $title = $row1["title"];
+                $priority = $row1["priority"];
+                $assigned_member = $row1["assigned_member"];
+                $status = $row1["status"];
+                $star_date = $row1["star_date"];
+                $end_date = $row1["end_date"];
+
+
+                $sql2 = "SELECT * FROM `members` WHERE `id` = '" . $assigned_member . "'";
+                $result2 = mysqli_query($conn, $sql2);
+                if (mysqli_num_rows($result2) > 0) {
+                    $row2 = mysqli_fetch_assoc($result2);
+                    $name = $row2["name"];
+                    echo "<a href=\"editTask.php?id=$id\"><div> <h2>Title: $title</h2> <h6>Priority: $priority</h6> <h6>Status: $status</h6> <h6>Assigned by: $name</h6>" .
+                    "<h6>start date: $star_date</h6> <h6>end date: $end_date</h6>  " .
+                    "<a href=\"accept.php?id=$id\"> <button name=\"bt_accept\">Accept</button></a></div>" .
+                    "<a href=\"finsh.php?id=$id\"> <button name=\"bt_finsh\">Finish</button></a></div></a>";
+                }else{
+                    echo "nothing";
+                }
+            }
+        }
+    }
+    ?>
+
+</body>
+
+</html>

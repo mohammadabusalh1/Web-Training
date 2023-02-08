@@ -33,7 +33,7 @@ $status = $task["status"];
 
 <body style="padding: 60px;">
 
-    <form action="update_task.php" method="post">
+    <form method="post">
         <input type="hidden" name="task_id" value="<?php echo $id; ?>">
         <div>
             <label for="title">Title:</label>
@@ -54,9 +54,9 @@ $status = $task["status"];
         <div>
             <label for="priority">Priority:</label>
             <select id="priority" name="priority">
-                <option value="Low" <?php if ($priority == "1") echo "selected"; ?>>1</option>
-                <option value="Medium" <?php if ($priority == "2") echo "selected"; ?>>2</option>
-                <option value="High" <?php if ($priority == "3") echo "selected"; ?>>3</option>
+                <option value="1" <?php if ($priority == "1") echo "selected"; ?>>1</option>
+                <option value="2" <?php if ($priority == "2") echo "selected"; ?>>2</option>
+                <option value="3" <?php if ($priority == "3") echo "selected"; ?>>3</option>
             </select>
         </div>
         <div>
@@ -83,8 +83,31 @@ $status = $task["status"];
                 <option value="Completed" <?php if ($status == "Completed") echo "selected"; ?>>Completed</option>
             </select>
         </div>
-        <input type="submit">
+        <button name="update_task">Update</button>
     </form>
+
+    <?php
+
+    if (isset($_POST["update_task"])) {
+        $task_id = $_POST["task_id"];
+        $title = $_POST["title"];
+        $description = $_POST["description"];
+        $start_date = $_POST["start_date"];
+        $end_date = $_POST["end_date"];
+        $priority = $_POST["priority"];
+        $assigned_member = $_POST["assigned_member"];
+        $status = $_POST["status"];
+
+        $sql = "UPDATE tasks SET title='$title', description='$description', star_date='$start_date', end_date='$end_date', priority='$priority', assigned_member='$assigned_member', status='$status' WHERE id='$task_id'";
+        if (mysqli_query($conn, $sql)) {
+            echo "Task updated successfully";
+        } else {
+            echo "Error updating task: " . mysqli_error($conn);
+        }
+    }
+
+
+    ?>
 
 </body>
 
