@@ -38,11 +38,52 @@ if (mysqli_num_rows($result) > 0) {
         <button type="submit" name="bt_search">search</button>
     </form>
 
+    <form method="post">
+        <select name="orderOp" id="orderOp">
+            <option value="star_date">start date</option>
+            <option value="end_date">end date</option>
+            <option value="priority">priority</option>
+            <option value="assigned_member">assigned member</option>
+            <option value="status">status</option>
+        </select>
+        <button type="submit" name="bt_order">Order</button>
+    </form>
+
+
     <?php
 
     $sql1 = "SELECT * FROM `tasks` WHERE assigning_member = '" . $mem_id . "'";
-
     $result1 = mysqli_query($conn, $sql1);
+    if (isset($_POST["bt_order"])) {
+
+        $searchOp = $_POST["orderOp"];
+        $sql1 = "SELECT * FROM `tasks` WHERE assigning_member = '" . $mem_id . "' ORDER BY " . $searchOp . "";
+
+        $result1 = mysqli_query($conn, $sql1);
+        if (mysqli_num_rows($result1) > 0) {
+            while ($row1 = mysqli_fetch_assoc($result1)) {
+                $id  = $row1["id"];
+                $title = $row1["title"];
+                $priority = $row1["priority"];
+                $assigned_member = $row1["assigned_member"];
+                $status = $row1["status"];
+                $star_date = $row1["star_date"];
+                $end_date = $row1["end_date"];
+
+                $sql2 = "SELECT * FROM `members` WHERE `id` = '" . $assigned_member . "'";
+                $result2 = mysqli_query($conn, $sql2);
+                if (mysqli_num_rows($result2) > 0) {
+                    $row2 = mysqli_fetch_assoc($result2);
+                    $name = $row2["name"];
+                    echo "<a href=\"editTask.php?id=$id\"><div> <h2>Title: $title</h2> <h6>Priority: $priority</h6> <h6>Status: $status</h6> <h6>Assigned by: $name</h6>" .
+                        "<h6>start date: $star_date</h6> <h6>end date: $end_date</h6>  " .
+                        "<a href=\"accept.php?id=$id\"> <button name=\"bt_accept\">Accept</button></a></div>" .
+                        "<a href=\"finsh.php?id=$id\"> <button name=\"bt_finsh\">Finish</button></a></div></a>";
+                }
+            }
+        }
+    }
+
     if (mysqli_num_rows($result1) > 0) {
         while ($row1 = mysqli_fetch_assoc($result1)) {
             $id  = $row1["id"];
@@ -124,6 +165,8 @@ if (mysqli_num_rows($result) > 0) {
         }
     }
     ?>
+
+
 </body>
 
 </html>
