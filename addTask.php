@@ -66,7 +66,7 @@ if ($_SESSION['login'] == 0) {
         $assigned_member = $_POST["assigned_member"];
         $status = "Pending";
 
-        if (strtotime($end_date) <= strtotime($start_date)) {
+        if (strtotime($end_date) < strtotime($start_date)) {
             echo "Error: End date must be greater than start date.";
             exit;
         } else {
