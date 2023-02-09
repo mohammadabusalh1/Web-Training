@@ -1,0 +1,127 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: 'Cairo', sans-serif;
+    color: var(--black);
+    text-shadow: 0px 4px 3px rgb(0, 0, 0, 0.04);
+}
+
+header {
+    padding: 24px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    box-shadow: 0.2rem 0.5rem 0.5rem rgb(0, 0, 0, 0.17);
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
+
+i {
+    font-size: 32px;
+    color: #395B64;
+}
+i h4 {
+    display: inline;
+    padding-left: 8px;
+}
+
+#links {
+    display: flex;
+    justify-content: space-between;
+    width: 22%;
+}
+
+#links a:hover {
+    color: #395B64;
+}
+
+#breadcrumb_navigation {
+    padding: 24px 64px;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid hsl(0, 0%, 0%,0.5);
+    background-color: #E7F6F2;
+}
+
+#breadcrumb_navigation a {
+    color: #2C3333;
+}
+
+#breadcrumb_navigation a:hover{
+    color: black;
+}
+
+
+
+select {
+    padding: 8px;
+    border: 1px solid hsl(193, 27%, 31%,0,6);
+    width: 51.6%;
+
+}
+
+input {
+    padding: 8px;
+    border: 1px solid hsl(193, 27%, 31%,0,6);
+    width: 50%;
+}
+
+button {
+    padding: 8px 32px;
+    background-color: #395B64;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+opacity: 0.8;
+}
+
+
+footer {
+    background-color: #E7F6F2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer #box_cont {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px 80px;
+    width: 30%;
+}
+
+footer #box_cont .box a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 4px 0;
+}
+
+footer #box_cont .box a h6 {
+    padding-left: 12px;
+    transition: 0.3s;
+}
+
+footer #box_cont .box h4 {
+    padding-bottom: 12px;
+}
+
+
+#hero{
+    padding: 40px 80px;
+}
+
+textarea{
+    width: 50%;
+    padding: 8px;
+}
