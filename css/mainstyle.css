@@ -66,9 +66,8 @@ i h4 {
     border-right: 1px solid hsl(0, 0%, 0%, 0.4);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
+    padding: 40px 24px;
 }
 
 #main_navigation img {

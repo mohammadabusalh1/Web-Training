@@ -31,7 +31,9 @@ if (mysqli_num_rows($result) > 0) {
 
     <header>
         <i class="fas fa-home">
-            <h4>HOME</h4>
+            <a href="main.php">
+                <h4>HOME</h4>
+            </a>
         </i>
         <div id="links">
             <a href="about.php">About us</a>
@@ -51,6 +53,9 @@ if (mysqli_num_rows($result) > 0) {
 
     <section id="hero">
         <form method="post">
+
+            <h2>Your Id is: <?php echo $mem_id; ?></h2><br>
+
             <label for="title">*Title:</label><br>
             <input type="text" id="title" name="title"><br><br>
 

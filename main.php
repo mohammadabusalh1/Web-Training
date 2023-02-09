@@ -31,7 +31,7 @@ if (mysqli_num_rows($result) > 0) {
 
     <header>
         <i class="fas fa-home">
-            <h4>HOME</h4>
+            <a href="main.php"><h4>HOME</h4></a>
         </i>
         <div id="links">
             <a href="about.php">About us</a>
@@ -51,7 +51,6 @@ if (mysqli_num_rows($result) > 0) {
 
     <section id="hero">
         <div id="main_navigation">
-            <img src="img/IMG-20221003-WA0001 (2).jpg" alt="MyImage">
             <div id="info">
 
                 <?php
