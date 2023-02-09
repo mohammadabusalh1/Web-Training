@@ -59,7 +59,7 @@ if (mysqli_num_rows($result) > 0) {
 
                 if (mysqli_num_rows($result) > 0) {
                     $row = mysqli_fetch_assoc($result);
-                    $name = $row["name"];
+                    $name1 = $row["name"];
                     $id = $row["id"];
                     $nationality = $row["nationality"];
                     $address = $row["address"];
@@ -73,6 +73,7 @@ if (mysqli_num_rows($result) > 0) {
 
 
                 <h4><?php echo "ID: " . $id . "<br>"; ?></h4>
+                <h4><?php echo "Name: " . $name1 . "<br>"; ?></h4>
                 <h4><?php echo "Nationality: " . $nationality . "<br>"; ?></h4>
                 <h4><?php echo "Address: " . $address . "<br>"; ?></h4>
                 <h4><?php echo "Phone: " . $phone . "<br>"; ?></h4>
@@ -179,8 +180,6 @@ if (mysqli_num_rows($result) > 0) {
                         }
                     }
                 }
-
-
                 $sql = "SELECT mem_id FROM users WHERE username = '$name'";
                 $result = mysqli_query($conn, $sql);
                 if (mysqli_num_rows($result) > 0) {

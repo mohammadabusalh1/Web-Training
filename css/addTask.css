@@ -85,18 +85,18 @@ opacity: 0.8;
 
 footer {
     background-color: #E7F6F2;
-    padding: 20px;
+    padding: 40px 80px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
 }
 
 footer #box_cont {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 40px 80px;
+    padding: 40px 0;
     width: 30%;
 }
 

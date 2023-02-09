@@ -24,6 +24,7 @@ i {
     font-size: 32px;
     color: #395B64;
 }
+
 i h4 {
     display: inline;
     padding-left: 8px;
@@ -43,7 +44,7 @@ i h4 {
     padding: 24px 64px;
     display: flex;
     justify-content: space-around;
-    border-bottom: 1px solid hsl(0, 0%, 0%,0.5);
+    border-bottom: 1px solid hsl(0, 0%, 0%, 0.5);
     background-color: #E7F6F2;
 }
 
@@ -51,14 +52,13 @@ i h4 {
     color: #2C3333;
 }
 
-#breadcrumb_navigation a:hover{
+#breadcrumb_navigation a:hover {
     color: black;
 }
 
 #hero {
     display: flex;
     justify-content: space-between;
-    height: 80vh;
 }
 
 #main_navigation {
@@ -92,7 +92,8 @@ main {
     align-items: center;
     width: 85%;
 }
-form{
+
+form {
     display: flex;
     align-items: center;
     width: 100%;
@@ -101,19 +102,19 @@ form{
 
 main select {
     padding: 8px;
-    border: 1px solid hsl(193, 27%, 31%,0,6);
+    border: 1px solid hsl(193, 27%, 31%, 0, 6);
     margin: 0 8px;
 }
 
 main input {
     padding: 8px;
-    border: 1px solid hsl(193, 27%, 31%,0,6);
+    border: 1px solid hsl(193, 27%, 31%, 0, 6);
     margin: 0 8px;
     width: 40%;
 }
 
 main button {
-    padding: 8px 16px;
+    padding: 10px 16px;
     background-color: #395B64;
     color: white;
     border: none;
@@ -121,46 +122,48 @@ main button {
 }
 
 main button:hover {
-opacity: 0.8;
+    opacity: 0.8;
 }
 
-#contaner{
-display: flex;
-flex-wrap: wrap;
-padding: 40px;
-justify-content: space-between;
-width: 60%;
-direction: rtl;
-}
-
-.card{
+#contaner {
+    display: flex;
+    flex-wrap: wrap;
     padding: 40px;
-    border: 1px solid hsl(193, 27%, 31%,0.8);
-    border-radius: 12px;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    direction: rtl;
 }
 
-.card h2{
+.card {
+    padding: 40px;
+    border: 1px solid hsl(193, 27%, 31%, 0.8);
+    border-radius: 12px;
+    margin-top: 12px;
+}
+
+.card h2 {
     padding: 8px 0;
 }
 
-.card h6{
+.card h6 {
     padding: 8px 0;
 }
 
 footer {
     background-color: #E7F6F2;
-    padding: 20px;
+    padding: 40px 80px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
 }
 
 footer #box_cont {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 40px 80px;
+    padding: 40px 0;
     width: 30%;
 }
 
