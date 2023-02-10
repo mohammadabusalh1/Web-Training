@@ -132,7 +132,7 @@ main button:hover {
     justify-content: space-around;
     align-items: center;
     width: 60%;
-    direction: rtl;
+    direction: ltr;
 }
 
 .card {
